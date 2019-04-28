@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <a *ngIf="!getEdit" [href]="item.href">{{item.title}}</a>
+    <input *ngIf="getEdit" (keyup.enter)="doEdit()" (keyup.espace)="doCancel()"
+      [(ngModel)]="item.title">
+    <button (click)="doDelete()">刪除文章</button>
+
+    <button *ngIf="!getEdit" (click)="getEdit=true">編輯標題</button>
+    <button *ngIf="getEdit" (click)="getEdit=false">取消標題</button>
+  </div>
+  <div>
+    <span>
+      <i>{{item.date | date :'yyyy/MM/dd'}}</i>
+      <p>作者：{{item.author}}</p>
+    </span>
+  </div>
+</header>

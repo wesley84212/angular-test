@@ -1,0 +1,4 @@
+<article class="post" id="post{{idx}}" *ngFor="let item of data; let idx = index">
+  <app-article-herder [item]="item" (delete)="dataser.getDelete($event)" (titleEdit)="dataser._run();dataser.run()"></app-article-herder>
+  <app-article-body [item]="item" [counter]="counter"></app-article-body>
+</article>
